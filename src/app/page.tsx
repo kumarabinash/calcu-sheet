@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { evaluate, parse, format, create, all } from "mathjs";
+import { format, create, all } from "mathjs";
 
 // Create a custom math instance with all functions
 const math = create(all);
@@ -14,7 +14,7 @@ export default function Home() {
   ]);
 
   const [solutions, setSolutions] = useState<string[]>([]);
-  const [scope, setScope] = useState<Record<string, any>>({});
+  const [, setScope] = useState<Record<string, any>>({});
 
   const parseExpression = (expression: string, currentScope: Record<string, any>): string => {
     try {
